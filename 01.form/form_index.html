@@ -217,29 +217,6 @@
 						</div>
 					</div>
 					<div class="cm_tit">
-						<h3>TOGGLE BOX</h3>
-					</div>
-					<div class="cm_cont">
-						<div class="toggle_box">
-							<button type="button" class="btn_toggle open"><span class="txt_open">펼쳐보기</span><span class="txt_close">닫기</span></button>
-							<div class="cont_toggle" style="display: none;">
-								cont1
-							</div>
-						</div>
-						<div class="toggle_box">
-							<button type="button" class="btn_toggle open"><span class="txt_open">펼쳐보기</span><span class="txt_close">닫기</span></button>
-							<div class="cont_toggle" style="display: none;">
-								cont2
-							</div>
-						</div>
-						<div class="toggle_box">
-							<button type="button" class="btn_toggle open"><span class="txt_open">펼쳐보기</span><span class="txt_close">닫기</span></button>
-							<div class="cont_toggle" style="display: none;">
-								cont3
-							</div>
-						</div>
-					</div>
-					<div class="cm_tit">
 						<h3>file upload</h3>
 					</div>
 					<div class="cm_cont">
@@ -343,16 +320,6 @@
 
 					welRadioGroup.each(function () {
 						$(this).parent(".inp_rdo3").toggleClass("on", $(this).is(":checked"));
-					});
-				});
-				// 토글 박스 컨트롤
-				$(".toggle_box").each(function () {
-					$(".btn_toggle").on("click", function () {
-						$(this).siblings(".cont_toggle").stop(true, true).slideToggle(300);
-						$(this).parent().addClass("on");
-						if ($(this).hasClass("on") == 1) {
-							console.log("?");
-						}
 					});
 				});
 				// 파일 업로드 컨트롤

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Toggle UIO 마크업</title>
+		<link rel="stylesheet" type="text/css" href="css/toggle.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="test_wrap">
+			<div class="header">
+				<div class="content">
+					<h1>Toggle UIO</h1>
+				</div>
+			</div>
+			<div class="container">
+				<div class="content">
+					<div class="cm_tit">
+						<h3>TOGGLE BOX</h3>
+					</div>
+					<div class="cm_cont">
+						<div class="toggle_bx">
+							<ul class="toggle_lst">
+								<li>
+									<button type="button" class="toggle_btn" aria-expanded="false"><span class="toggle_tit">타이틀 1</span><span class="blind">펼치기</span></button>
+									<div class="toggle_cont">
+										컨텐츠 1
+									</div>
+								</li>
+								<li>
+									<button type="button" class="toggle_btn" aria-expanded="false"><span class="toggle_tit">타이틀 2</span><span class="blind">펼치기</span></button>
+									<div class="toggle_cont">
+										컨텐츠 2
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			// 토글 박스 컨트롤
+			$(".toggle_btn").on("click", function () {
+				var welTargetText = $(this).find(".blind");
+				$(this).siblings(".toggle_cont").stop(true, true).slideToggle(300);
+
+				if ($(this).attr("aria-expanded") == "false") {
+					$(this).attr("aria-expanded", "true");
+					welTargetText.html("접기");
+				} else {
+					$(this).attr("aria-expanded", "false");
+					welTargetText.html("펼치기");
+				}
+
+				$(this).parent().addClass("on");
+			});
+		</script>
+	</body>
+</html>
