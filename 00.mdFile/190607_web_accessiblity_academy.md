@@ -18,7 +18,7 @@
 ### 가격 UI
 **[문제] 정상가, 할인가, 할인율을 따로 읽어주지 않음**
 
-![가격 UI 관련 접근성 이슈](img/img_price_0607.jpg)
+![가격 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_tgl_0607.jpg)
 
 * 취소선이 `text-decoration`으로 표현되어 있어 스크린 리더가 따로 읽어주지 않음!
 * `del, s` 태그를 보조기기는 인식하지 않기 때문에 부적절 
@@ -28,7 +28,7 @@
 ### 운용되지 않는 버튼  UI 
 **[문제] 무료배송 버튼이 운용되지 않는데 버튼으로 제공되어 있음**
 
-![버튼 UI 관련 접근성 이슈](img/img_btn_0607.jpg)
+![버튼 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_btn_0607.jpg)
 
 * 버튼을 운용해도 별다른 동작을 하지 않음
 * span이나 div 태그를 사용하여 운용되지 않는 요소는 클릭되지 않도록 해야함
@@ -37,7 +37,7 @@
 ### 토글 버튼  UI 
 **[문제] 카드할인, 무이자할부, 카드추가혜택 열기 버튼은 토글 기능을 하고 있지만 버튼 안내 문구가 모호하고, 토글 된 상태에서 버튼 문구가 열기에서 바뀌지 않고 있음**
 
-![토글 버튼 UI 관련 접근성 이슈](img/img_tgl_0607.jpg)
+![토글 버튼 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_tgl_0607.jpg)
 
 * '열기' 버튼 이라는 워딩 → '펼치기' 라는 워딩이 적절
 * '열기' 버튼 이후, '닫기, 접기' 로 문구를 바꿔주어야 함
@@ -48,7 +48,7 @@
 ### 툴팁  UI  
 **[문제] 대체 텍스트를 제공하지 않은 툴팁 레이어**
 
-![툴팁 UI 관련 접근성 이슈](img/img_tooltip_0607.jpg)
+![툴팁 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_tooltip_0607.jpg)
 
 * `display:none/block`이라 '이벤트보기 새 창 열림' 이라고 읽어줌
 * '이벤트 보기' 버튼도 워딩이 모호하고, 이벤트 보기라는 정보가 중복 제공되고 있음
@@ -57,7 +57,7 @@
 
 **[문제] 총 상품금액 보기 '링크'**
 
-![툴팁 UI 관련 접근성 이슈](img/img_tooltip2_0607.jpg)
+![툴팁 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_tooltip2_0607.jpg)
 
 * '총 상품금액 보기'라고 대체 텍스트가 제공되어 있는데, 포커스 이동으로 접근 했을 때 레이어가 열려 있음
 →  '이미 열려 있음' (레이어가 열린 상태)를 대체 텍스트로 제공하거나, 사용자가 레이어를 열 수 있도록 동작을 제어할 수 있도록 해야함. 또한, 보기라는 워딩보단 펼치기라는 워딩이 더 맞다고 함
@@ -70,7 +70,7 @@
 ### 관심상품 추가버튼  UI  
 **[문제] 관심상품 추가 버튼계속 추가를 해도 관심상품 추가 버튼이라고 버튼의 텍스트가 바뀌지 않음**
 
-![가격 UI 관련 접근성 이슈](img/img_btn2_0607.jpg)
+![가격 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_btn2_0607.jpg)
 
 * 버튼이 운용될 경우 `.ly_interest` 레이어가 노출되며 시각적으로 버튼의 상태를 알려주지만 보조기기는 읽어주지 않음
 * 현재 상태 정보와 어떤 기능을 할 지 알려줘야 함
@@ -81,23 +81,23 @@
 ### 위메프 상품 상세 페이지 (https://bit.ly/2IuNJ30) 
 **[문제] `<span class="line">ㅣ</span>` 로 마크업 하여 스크린 리더로 읽음**
 
-![위메프 상품 상세 페이지 UI 관련 접근성 이슈](img/img_wmp_0607.jpg)
+![위메프 상품 상세 페이지 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_wmp_0607.jpg)
 
 * '이'로 읽혀 숫자/한자/영어 이 인지 알 수 없고 불필요한 텍스트가 읽힘 
 * `aria-hidden="true"`로 읽히지 않게 제공하던가, border로 그려주는 등 다른 방법 탐색 필요 
 * `' ㅣ '` 로 한 이유는.. 이렇게 해야 양 측 간격이 같아서 였다고 한다!
 
 ### 별 점 UI
-![별 점 UI 관련 접근성 이슈](img/img_star_0607.jpg)
+![별 점 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_star_0607.jpg)
 
 ### 그래프 UI (https://bit.ly/2F1vAbW)
 
-![별 점 UI 관련 접근성 이슈](img/img_graph_0607.jpg)
+![별 점 UI 관련 접근성 이슈](https://yo-onhye.github.io/00.web-accessibility/img/img_graph_0607.jpg)
 
 ### 간편결제 UI (https://escrow.gmarket.co.kr/ko/order?orderIdx=149ffd74f&itemNo=1473862457&Entrance=PAY&Entrance=PAY)
 **[문제] span으로 선택되기 때문에 카드 선택 기능이 없고 다음 버튼을 운용해도 카드를 선택할 수 없음**
 
-![간편결제](img/img_pay_0607.jpg)
+![간편결제](https://yo-onhye.github.io/00.web-accessibility/img/img_pay_0607.jpg)
 
 * 이전/다음 버튼으로 카드를 선택하게 되어 있음 하지만, 카드가 중앙에 와야 선택이 되도록 구현되어 있음
 * 이전/다음 버튼으로 운용했을 때 선택된 카드를 `role="alert"`을 사용해서 어느 카드가 선택되었는지 알려줘야 함
