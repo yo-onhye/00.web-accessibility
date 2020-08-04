@@ -10,14 +10,16 @@
 ## 접근성을 준수하는 UI 만들기
 
 ### 목표
+
 - 반응형, 모든 경우의 수로 해보기
 - WAI-ARIA 사용해보기
 - 호환성은 9~최신 (IE8은 UI만 깨지지 않는 선으로)
 - 이미지는 최소화하여 텍스트 기반으로 작업 (SVG로 그리기)
 
 ### UI 리스트
+
 - [폼 (input type="text/checkbox/radio/file/textarea")](https://github.com/yo-onhye/00.web-accessibility/tree/master/01.form)
-- [테이블](https://yo-onhye.github.io/00.web-accessibility/02.table)
+- [테이블](https://github.com/yo-onhye/00.web-accessibility/tree/master/02.table)
 - [토글 (아코디언)](https://github.com/yo-onhye/00.web-accessibility/tree/master/03.toggle)
 - 툴팁
 - 레이어
