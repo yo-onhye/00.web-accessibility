@@ -17,7 +17,7 @@
 
 ### UI 리스트
 - [폼 (input type="text/checkbox/radio/file/textarea")](https://github.com/yo-onhye/00.web-accessibility/tree/master/01.form)
-- 테이블
+- [테이블](https://yo-onhye.github.io/00.web-accessibility/02.table)
 - [토글 (아코디언)](https://github.com/yo-onhye/00.web-accessibility/tree/master/03.toggle)
 - 툴팁
 - 레이어

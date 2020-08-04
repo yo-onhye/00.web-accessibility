@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Table UIO 마크업</title>
+		<link rel="stylesheet" type="text/css" href="./css/table.css" />
+	</head>
+	<body>
+		<div class="test_wrap">
+			<div class="header">
+				<div class="content">
+					<h1>Table UIO</h1>
+				</div>
+			</div>
+			<div class="container">
+				<div class="content">
+					<div class="cm_tit">
+						<h3>Table</h3>
+					</div>
+					<div class="cm_cont">
+						<div class="cm_tbl">
+							<table>
+								<caption>
+									<span class="blind"> 내용 설명 테이블입니다.</span>
+								</caption>
+								<colgroup>
+									<col style="width: 100px;" />
+									<col style="width: 300px;" />
+									<col />
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">제목</th>
+										<th scope="col">제목</th>
+										<th scope="col">제목</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">내용</th>
+										<td><span>내용</span></td>
+										<td><span>내용</span></td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td><span>내용</span></td>
+										<td><span>내용</span></td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td><span>내용</span></td>
+										<td><span>내용</span></td>
+									</tr>
+									<tr>
+										<th scope="row">내용</th>
+										<td><span>내용</span></td>
+										<td><span>내용</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="cm_tit">
+						<h3>Scroll Table</h3>
+					</div>
+					<div class="cm_cont">
+						<div class="table_info">
+							<strong>이슈사항</strong>
+							<ul>
+								<li>- 스크롤의 넓이에 따라 테이블의 width값을 제어해야 한다</li>
+								<li>- 셀의 좌우 선이 있을 경우는 고려하지 못함</li>
+							</ul>
+						</div>
+						<div class="cm_scroll_tbl">
+							<table>
+								<caption>
+									<span class="blind">테이블 설명을 입력해주세요.</span>
+								</caption>
+								<colgroup>
+									<col style="width: 100px;" />
+									<col style="width: 300px;" />
+									<col />
+								</colgroup>
+								<tbody>
+									<tr class="cm_scroll_heading" aria-hidden="true">
+										<td>제목</td>
+										<td>제목</td>
+										<td>제목</td>
+									</tr>
+									<tr>
+										<td colspan="3">
+											<div class="tbl_scroll_inner" style="height: 280px;">
+												<table>
+													<caption>
+														<span class="blind">테이블 설명을 입력해주세요.</span>
+													</caption>
+													<colgroup>
+														<col style="width: 100px;" />
+														<col style="width: 300px;" />
+														<col />
+													</colgroup>
+													<thead class="blind">
+														<tr>
+															<th scope="col">제목</th>
+															<th scope="col">제목</th>
+															<th scope="col">제목</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+														<tr>
+															<td>내용</td>
+															<td>내용</td>
+															<td>내용</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
