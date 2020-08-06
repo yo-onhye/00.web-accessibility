@@ -23,7 +23,7 @@
 - [토글 (아코디언)](https://github.com/yo-onhye/00.web-accessibility/tree/master/03.toggle)
 - 툴팁
 - 레이어
-- 탭
+- [탭](https://github.com/yo-onhye/00.web-accessibility/tree/master/06.tab)
 - 슬라이드
 - 달력
 - 리스트

@@ -21,6 +21,11 @@
 pattern속성이 키패드도 제어하는 것인지, 받는 값을 제어하는 것인지 더 찾아봐야겟다. 
 
 * 번외 : Ipad는 모두 숫자 + 하단 기호 키패드가 보임 (다만, 전화번호를 사용자가 저장해 두었다면 전화번호만 표시됨) 
+
+**Input type="file"**
+http://webclub.tistory.com/367 
+http://ankyu.entersoft.kr/Lecture/jquery/script_02_24.asp
+파일 선택 후 페이지 재 로딩 시 inphone voiceover로 작동했을 때 초점이 상단으로 이동하는 이슈 발생 
  
 ### 2) CHECK BOX
 * 단일서식때 label 미사용후 디자인 서식 사용
