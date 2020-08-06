@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Tab UIO 마크업</title>
+		<link rel="stylesheet" type="text/css" href="./css/tab.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="test_wrap">
+			<div class="header">
+				<div class="content">
+					<h1>Tab UIO</h1>
+				</div>
+			</div>
+			<div class="container">
+				<div class="content">
+					<div class="cm_tit">
+						<h3>Tab</h3>
+					</div>
+					<div class="cm_cont">
+						<div class="cm_tab _js_tab_bx">
+							<ul class="cm_tab_lst" role="tablist">
+								<li role="presentation" class="active">
+									<button type="button" class="cm_tab_btn _js_tab_btn" role="tab" aria-selected="true"><span>tab1</span></button>
+								</li>
+								<li role="presentation">
+									<button type="button" class="cm_tab_btn _js_tab_btn" role="tab" aria-selected="false"><span>tab2</span></button>
+								</li>
+							</ul>
+							<div class="cm_tab_cont">
+								<div class="cm_tab_panel _js_tab_pannel active" role="tabpanel">
+									<!-- aria속성이나 구조 순서 tab pannel과 연결할 수 있지만 간단하게 tab pannel에 tab명과 같은 헤딩 태그를 부여하여 연결시킴 -->
+									<h4 class="blind">Tab1</h4>
+									tab1
+								</div>
+								<div class="cm_tab_panel _js_tab_pannel" role="tabpanel">
+									<h4 class="blind">Tab1</h4>
+									tab2
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cm_tit">
+						<h3>Radio Tab</h3>
+					</div>
+					<div class="cm_cont">
+						<div class="cm_rdotab _js_rdotab_bx">
+							<ul class="cm_rdotab_lst" role="tablist">
+								<li class="" role="presentation">
+									<span class="cm_rdo _js_rdotab_btn">
+										<input type="radio" name="rdoGoup" id="rdo01" checked="" />
+										<label for="rdo01">Tab1</label>
+									</span>
+								</li>
+								<li role="presentation" class="on">
+									<span class="cm_rdo _js_rdotab_btn">
+										<input type="radio" name="rdoGoup" id="rdo02" />
+										<label for="rdo02">Tab2</label>
+									</span>
+								</li>
+							</ul>
+							<div class="cm_rdotab_cont">
+								<div class="cm_rdotab_panel _js_rdotab_pannel" style="display: block;">
+									<h4 class="blind">Tab1</h4>
+									Tab1
+								</div>
+								<div class="cm_rdotab_panel _js_rdotab_pannel" style="display: none;">
+									<h4 class="blind">Tab2</h4>
+									Tab2
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function () {
+				var elBody = $("body"),
+					elTabBox = elBody.find("._js_tab_bx"),
+					elrdoTabBox = elBody.find("._js_rdotab_bx"),
+					elTabBtn = elTabBox.find("._js_tab_btn"),
+					elTabPanel = elTabBox.find("._js_tab_pannel");
+
+				// tab UI
+				elTabBtn.on("click", function (e) {
+					var welTarget = $(e.currentTarget),
+						welTargetWrap = welTarget.closest("li"),
+						welTargetIndex = welTargetWrap.index();
+
+					welTargetWrap.addClass("active").siblings().removeClass("active");
+					welTarget.attr("aria-selected", "true").parent().siblings().children().attr("aria-selected", "false");
+
+					elTabPanel.eq(welTargetIndex).addClass("active").siblings().removeClass("active");
+				});
+
+				// radio tab UI
+				elrdoTabBox.on("change", "._js_rdotab_btn input[type=radio]", function (e) {
+					var welTarget = $(this).closest("li"),
+						nTargetIdx = welTarget.index();
+
+					welTarget.addClass("active").siblings().removeClass("active");
+					$(e.delegateTarget).find("._js_rdotab_pannel").hide().eq(nTargetIdx).show();
+				});
+			});
+		</script>
+	</body>
+</html>
