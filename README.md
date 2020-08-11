@@ -21,14 +21,13 @@
 - [폼 (input type="text/checkbox/radio/file/textarea")](https://github.com/yo-onhye/00.web-accessibility/tree/master/01.form)
 - [테이블](https://github.com/yo-onhye/00.web-accessibility/tree/master/02.table)
 - [토글 (아코디언)](https://github.com/yo-onhye/00.web-accessibility/tree/master/03.toggle)
-- 툴팁
+- [툴팁](https://github.com/yo-onhye/00.web-accessibility/tree/master/04.tooltip)
 - 레이어
 - [탭](https://github.com/yo-onhye/00.web-accessibility/tree/master/06.tab)
+- 별점
+- 그래프
 - 슬라이드
 - 달력
-- 리스트
-- 그래프
-- 계산기
 
 ## 보조기기 테스트
 

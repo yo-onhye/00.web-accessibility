@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Tooltip UIO 마크업</title>
+		<link rel="stylesheet" type="text/css" href="css/tooltip.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="test_wrap">
+			<div class="header">
+				<div class="content">
+					<h1>Tooltip UIO</h1>
+				</div>
+			</div>
+			<div class="container">
+				<div class="content">
+					<div class="cm_tit">
+						<h3>Tooltip BOX</h3>
+					</div>
+					<div class="cm_cont">
+						버튼을 클릭하면 툴팁을 펼칠 수 있습니다.
+						<div class="tooltip_bx">
+							<button class="tooltip_btn" aria-describedby="elTooltip01"><span aria-hidden="true">?</span><span class="blind">툴팁 펼치기</span></button>
+							<div id="elTooltip01" class="tooltip_layer" role="tooltip">
+								<h4 class="tooltip_tit">툴팁 제목입니다</h4>
+								<div class="tooltip_cont">
+									<p>툴팁 내용입니다.</p>
+									<p>툴팁 내용입니다.</p>
+								</div>
+								<button class="tooltip_btn_close"><span class="blind">툴팁 접기</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var welBody = $("body"),
+				welTooltip = welBody.find(".tooltip_bx"),
+				welTooltipBtn = welTooltip.find(".tooltip_btn"),
+				welTooltipCloseBtn = welTooltip.find(".tooltip_btn_close");
+			welTooltipBtn.on("click", function (e) {
+				e.preventDefault();
+
+				var targetTooltip = $(this).closest(".tooltip_bx");
+
+				targetTooltip.toggleClass("on");
+
+				if (targetTooltip.hasClass("on")) {
+					targetTooltip.find(".tooltip_btn .blind").text("툴팁 접기");
+					targetTooltip.find(".tooltip_layer").show();
+				} else {
+					targetTooltip.find(".tooltip_btn .blind").text("툴팁 펼치기");
+					targetTooltip.find(".tooltip_layer").hide();
+				}
+			});
+
+			welTooltipCloseBtn.on("click", function (e) {
+				e.preventDefault();
+
+				var targetTooltip = $(this).closest(".tooltip_bx");
+				targetTooltip.removeClass("on");
+				targetTooltip.find(".tooltip_btn .blind").text("툴팁 펼치기");
+				targetTooltip.find(".tooltip_layer").hide();
+			});
+		</script>
+	</body>
+</html>

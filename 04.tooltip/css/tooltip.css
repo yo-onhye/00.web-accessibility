@@ -1,0 +1,265 @@
+@charset 'utf-8';
+body,
+html {
+	height: 100%;
+}
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+legend,
+li,
+ol,
+p,
+select,
+table,
+td,
+textarea,
+th,
+ul {
+	margin: 0;
+	padding: 0;
+}
+dl,
+ul,
+ol,
+menu,
+li {
+	list-style: none;
+}
+body,
+button,
+input,
+select,
+table,
+textarea {
+	font-size: 14px;
+	color: #666;
+}
+fieldset,
+li,
+img {
+	border: 0;
+	vertical-align: top;
+}
+ul,
+ol {
+	list-style: none;
+}
+button {
+	overflow: visible;
+	border: 0;
+	background-color: transparent;
+	cursor: pointer;
+}
+button::-moz-focus-inner {
+	padding: 0;
+	border: 0;
+}
+address,
+caption,
+em {
+	font-style: normal;
+}
+a {
+	color: #666;
+	text-decoration: none;
+}
+a:focus,
+a:active,
+a:hover {
+	color: #666;
+	text-decoration: underline;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.header {
+	padding: 30px 0;
+	background: #f9f3f3;
+}
+.container {
+	padding: 50px 0;
+	border-top: 1px solid #ebebeb;
+}
+.content {
+	width: 80%;
+	margin: 0 auto;
+}
+.footer {
+	height: 150px;
+	background: #fff;
+	border-top: 1px solid #ebebeb;
+}
+.blind {
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	line-height: 0;
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-all;
+	clip: rect(0, 0, 0, 0);
+}
+.blind:before {
+	display: block;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	content: "\00a0";
+}
+
+/* tooltip ui common*/
+.cm_tit {
+	padding-bottom: 20px;
+	font-size: 21px;
+	line-height: 1.5;
+}
+.cm_cont {
+	padding-bottom: 50px;
+}
+.sub_tit {
+	padding: 30px 0 10px;
+	font-size: 12px;
+	color: #a9a9a9;
+	font-weight: bold;
+}
+.sub_tit:first-child {
+	padding-top: 0;
+}
+.inp_info {
+	font-size: 12px;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ebebeb;
+}
+.inp_info strong {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+.info_lst {
+	margin-top: 10px;
+}
+.info_lst li {
+	padding-top: 5px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+.cm_lst {
+	overflow: hidden;
+}
+.cm_lst li {
+	float: left;
+	margin-right: 20px;
+}
+.cm_lst li:last-child {
+	margin-right: 0;
+}
+
+/* tooltip */
+.tooltip_bx {
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+}
+.tooltip_bx .tooltip_btn {
+	position: relative;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border: 1px solid #777;
+	border-radius: 50%;
+	font-weight: bold;
+	text-align: center;
+	vertical-align: top;
+}
+.tooltip_bx .tooltip_layer {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: -20px;
+	width: 396px;
+	padding: 20px;
+	margin-top: 18px;
+	border: 1px solid #777;
+	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.16);
+	background: #fff;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 13px;
+	color: #222;
+	letter-spacing: -0.3px;
+	text-align: left;
+	z-index: 10;
+}
+.tooltip_bx.on .tooltip_layer:before,
+.tooltip_bx .tooltip_layer:after {
+	position: absolute;
+	top: -14px;
+	left: 18px;
+	height: 0;
+	width: 0;
+	border-bottom: 13px solid #777;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	pointer-events: none;
+	z-index: 11;
+	content: "";
+}
+.tooltip_bx.on .tooltip_layer:before {
+	border-bottom-color: #777;
+}
+.tooltip_bx.on .tooltip_layer:after {
+	border-bottom-color: #fff;
+	margin-top: 2px;
+}
+.tooltip_bx .tooltip_tit {
+	overflow: hidden;
+	height: 24px;
+	padding-right: 30px;
+	font-size: 18px;
+}
+.tooltip_bx .tooltip_cont {
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #777;
+	font-size: 14px;
+}
+.tooltip_bx .tooltip_btn_close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	width: 24px;
+	height: 24px;
+}
+.tooltip_bx .tooltip_btn_close:before,
+.tooltip_bx .tooltip_btn_close:after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 20px;
+	border: 1px solid #777;
+	content: "";
+}
+.tooltip_bx .tooltip_btn_close:before {
+	transform: translate(-50%, -50%) rotate(45deg);
+}
+.tooltip_bx .tooltip_btn_close:after {
+	transform: translate(-50%, -50%) rotate(-45deg);
+}
