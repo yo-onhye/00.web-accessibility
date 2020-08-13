@@ -21,6 +21,9 @@
 						<h3>Tab</h3>
 					</div>
 					<div class="cm_cont">
+						<div class="tab_info">
+							<strong>헤딩 태그로 접근성 준수</strong>
+						</div>
 						<div class="cm_tab _js_tab_bx">
 							<ul class="cm_tab_lst" role="tablist">
 								<li role="presentation" class="active">
@@ -37,7 +40,32 @@
 									tab1
 								</div>
 								<div class="cm_tab_panel _js_tab_pannel" role="tabpanel">
+									<h4 class="blind">Tab2</h4>
+									tab2
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cm_cont">
+						<div class="tab_info">
+							<strong>ARIA Properties로 접근성 준수</strong>
+						</div>
+						<div class="cm_tab _js_tab_bx">
+							<ul class="cm_tab_lst" role="tablist">
+								<li role="presentation" class="active">
+									<button type="button" id="tab1" class="cm_tab_btn _js_tab_btn" role="tab" aria-controls="tab-panel1" aria-selected="true"><span>tab1</span></button>
+								</li>
+								<li role="presentation">
+									<button type="button" id="tab2" class="cm_tab_btn _js_tab_btn" role="tab" aria-controls="tab-panel2" aria-selected="false"><span>tab2</span></button>
+								</li>
+							</ul>
+							<div class="cm_tab_cont">
+								<div id="tab-panel1" class="cm_tab_panel _js_tab_pannel active" role="tabpanel" aria-labelledby="tab1">
 									<h4 class="blind">Tab1</h4>
+									tab1
+								</div>
+								<div id="tab-panel2" class="cm_tab_panel _js_tab_pannel" role="tabpanel" aria-labelledby="tab2">
+									<h4 class="blind">Tab2</h4>
 									tab2
 								</div>
 							</div>
@@ -94,7 +122,7 @@
 					welTargetWrap.addClass("active").siblings().removeClass("active");
 					welTarget.attr("aria-selected", "true").parent().siblings().children().attr("aria-selected", "false");
 
-					elTabPanel.eq(welTargetIndex).addClass("active").siblings().removeClass("active");
+					elTabPanel.eq(welTargetIndex).addClass("active").attr("tabindex", "0").siblings().removeClass("active").attr("tabindex", "-1");
 				});
 
 				// radio tab UI
