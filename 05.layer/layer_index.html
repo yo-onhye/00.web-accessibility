@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Layer UIO 마크업</title>
+		<link rel="stylesheet" type="text/css" href="./css/layer.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="test_wrap">
+			<div class="header"></div>
+			<div class="container">
+				<div class="content">
+					<div class="cm_tit">
+						<h3>Layer</h3>
+					</div>
+					<div class="cm_cont">
+						<button class="btn_layer_open js-btn-layer-open" data-layer-target="#layerPopup01">레이어 열기</button>
+						<div class="layer_bx js-layer-area">
+							<div class="layer_inner" id="layerPopup01">
+								<h4 class="layer_tit">레이어 제목입니다</h4>
+								<div class="layer_cont">
+									<p>레이어 내용입니다.</p>
+									<p>레이어 내용입니다.</p>
+								</div>
+								<button type="button" class="layer_btn_close js-btn-layer-close"><span class="blind">레이어 닫기</span></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var exam = exam || {};
+			exam.View = exam.View || {};
+
+			exam.View.layerpopup = function (htOptions) {
+				$.extend(this, htOptions || {});
+				this.init();
+			};
+
+			exam.View.layerpopup.prototype = {
+				_welTargetLayer: null,
+				_welPrevFocus: null,
+				_welNextFocus: null,
+				_bOpen: false,
+				init: function () {
+					this._assignElements();
+					this._attachEventHandlers();
+				},
+				_assignElements: function () {
+					this._welLayerOpenBtn = $(".js-btn-layer-open");
+					this._welLayerArea = $(".js-layer-area");
+					this._welLayerCloseBtn = $(".js-btn-layer-close");
+				},
+				_attachEventHandlers: function () {
+					this._welLayerOpenBtn.on("click", $.proxy(this._onClickSetLayer, this));
+				},
+				_onClickSetLayer: function (e) {
+					e.preventDefault();
+
+					if (this._bOpen) {
+						this._onHideTargetLayer();
+					}
+
+					var welClickBtn = $(e.currentTarget),
+						sTargetLayer = welClickBtn.data("layer-target");
+
+					this._welTargetLayer = $(sTargetLayer);
+
+					if (!this._bOpen) {
+						this._welLayerOpenBtn = welClickBtn;
+						this._setFocusTag();
+					}
+					this._setTabIndex();
+					this._showLayerArea();
+					this._welTargetLayer.focus();
+					this._bOpen = true;
+				},
+				_onClickClearLayer: function (e) {
+					e.preventDefault();
+
+					this._removeFocusTag();
+					this._removeTabIndex();
+					this._hideLayerArea();
+
+					this._welLayerOpenBtn.focus();
+
+					this._bOpen = false;
+				},
+				_showLayerArea: function () {
+					this._onShowTargetLayer();
+					this._welLayerArea.show();
+				},
+				_hideLayerArea: function () {
+					this._onHideTargetLayer();
+					this._welLayerArea.hide();
+				},
+				_onShowTargetLayer: function () {
+					var oSelf = this;
+
+					this._welTargetLayer.show();
+
+					this._welLayerCloseBtn.on("click.closeLayer", $.proxy(this._onClickClearLayer, this));
+				},
+				_onHideTargetLayer: function () {
+					this._welLayerCloseBtn.off("click.closeLayer");
+				},
+				_setTabIndex: function () {
+					this._welTargetLayer.attr("tabIndex", 0);
+				},
+				_removeTabIndex: function () {
+					this._welTargetLayer.removeAttr("tabIndex");
+				},
+				_setFocusTag: function () {
+					var focusOutTagClass = "js-focusout",
+						focusOutTag = '<span class="' + focusOutTagClass + '" tabindex="0" style="overflow:hidden;position:absolute;left:0;top:0;z-index:-1;width:1px;height:1px;font-size:0;line-height:0"></span>';
+
+					this._welLayerArea.before(focusOutTag);
+					this._welLayerArea.after(focusOutTag);
+
+					this._welPrevFocus = this._welLayerArea.prev();
+					this._welNextFocus = this._welLayerArea.next();
+
+					this._welPrevFocus.on("focusin", $.proxy(this._prevFocusFunc, this));
+					this._welNextFocus.on("focusin", $.proxy(this._nextFocusFunc, this));
+				},
+				_removeFocusTag: function () {
+					this._welPrevFocus.remove();
+					this._welNextFocus.remove();
+				},
+				_prevFocusFunc: function () {
+					this._welLayerCloseBtn.focus();
+				},
+				_nextFocusFunc: function () {
+					this._welTargetLayer.focus();
+				},
+			};
+
+			$(function () {
+				var oExamViewLayerpopup = new exam.View.layerpopup();
+			});
+		</script>
+	</body>
+</html>
