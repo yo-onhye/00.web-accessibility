@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>Rate UIO 마크업</title>
+		<link rel="stylesheet" type="text/css" href="css/rate.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="test_wrap">
+			<div class="header">
+				<div class="content">
+					<h1>Rate UIO</h1>
+				</div>
+			</div>
+			<div class="container">
+				<div class="content">
+					<div class="cm_tit">
+						<h3>Rate BOX</h3>
+					</div>
+					<div class="cm_cont">
+						<div class="rate_bx">
+							<div class="rate_tit">
+								<h4 class="rate_tit_tx">선호도를 선택해주세요</h4>
+								<div class="tooltip_bx">
+									<button class="tooltip_btn" aria-describedby="elTooltip01"><span class="blind">선호도 선택 툴팁 펼치기</span></button>
+									<div id="elTooltip01" class="tooltip_layer" role="tooltip" style="display: none;">
+										<h4 class="tooltip_tit">선호도 선택</h4>
+										<div class="tooltip_cont">
+											<span class="cm_rdo">
+												<input type="radio" name="ratingGrp01" id="heart1_1" checked />
+												<label for="heart1_1">1점</label>
+											</span>
+											<span class="cm_rdo">
+												<input type="radio" name="ratingGrp01" id="heart1_1" />
+												<label for="heart1_1">2점</label>
+											</span>
+											<span class="cm_rdo">
+												<input type="radio" name="ratingGrp01" id="heart1_3" />
+												<label for="heart1_3">3점</label>
+											</span>
+											<span class="cm_rdo">
+												<input type="radio" name="ratingGrp01" id="heart1_4" />
+												<label for="heart1_4">4점</label>
+											</span>
+											<span class="cm_rdo">
+												<input type="radio" name="ratingGrp01" id="heart1_5" />
+												<label for="heart1_5">5점</label>
+											</span>
+										</div>
+										<button class="tooltip_btn_close"><span class="blind">선호도 선택 툴팁 접기</span></button>
+									</div>
+								</div>
+							</div>
+							<div class="rate_heart_bx">
+								<input type="radio" id="heart2_5" name="ratingGrp02" />
+								<label for="heart2_5"><span class="blind">5점</span></label>
+								<input type="radio" id="heart2_4" name="ratingGrp02" />
+								<label for="heart2_4"><span class="blind">4점</span></label>
+								<input type="radio" id="heart2_3" name="ratingGrp02" />
+								<label for="heart2_3"><span class="blind">3점</span></label>
+								<input type="radio" id="heart2_2" name="ratingGrp02" />
+								<label for="heart2_2"><span class="blind">2점</span></label>
+								<input type="radio" id="heart2_1" name="ratingGrp02" checked />
+								<label for="heart2_1"><span class="blind">1점</span></label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var welBody = $("body"),
+				welTooltip = welBody.find(".tooltip_bx"),
+				welTooltipBtn = welTooltip.find(".tooltip_btn"),
+				welTooltipCloseBtn = welTooltip.find(".tooltip_btn_close");
+			welTooltipBtn.on("click", function (e) {
+				e.preventDefault();
+
+				var targetTooltip = $(this).closest(".tooltip_bx");
+
+				targetTooltip.toggleClass("on");
+
+				if (targetTooltip.hasClass("on")) {
+					targetTooltip.find(".tooltip_btn .blind").text("선호도 선택 툴팁 접기");
+					targetTooltip.find(".tooltip_layer").show();
+				} else {
+					targetTooltip.find(".tooltip_btn .blind").text("선호도 선택 툴팁 펼치기");
+					targetTooltip.find(".tooltip_layer").hide();
+				}
+			});
+
+			welTooltipCloseBtn.on("click", function (e) {
+				e.preventDefault();
+
+				var targetTooltip = $(this).closest(".tooltip_bx");
+				targetTooltip.removeClass("on");
+				targetTooltip.find(".tooltip_btn .blind").text("선호도 선택 툴팁 펼치기");
+				targetTooltip.find(".tooltip_layer").hide();
+			});
+		</script>
+	</body>
+</html>

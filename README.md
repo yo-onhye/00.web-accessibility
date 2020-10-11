@@ -24,7 +24,7 @@
 - [툴팁](https://github.com/yo-onhye/00.web-accessibility/tree/master/04.tooltip)
 - [레이어](https://github.com/yo-onhye/00.web-accessibility/tree/master/05.layer)
 - [탭](https://github.com/yo-onhye/00.web-accessibility/tree/master/06.tab)
-- 별점
+- [별점](https://github.com/yo-onhye/00.web-accessibility/tree/master/07.rate)
 - 그래프
 - 슬라이드
 - 달력
